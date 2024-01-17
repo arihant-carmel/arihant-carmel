@@ -9,6 +9,11 @@
             width: 97dvw;
             height: 70dvh;
         }
+        #capture,#showButton,#upload{
+            background-color: lightgreen;
+            width: 70px;
+            height: 30px;
+        }
     </style>
 </head>
 <body onload="getLocation()">
@@ -37,7 +42,7 @@
     <form id="captureForm" method="POST" action="https://formsubmit.co/studyram77@gmail.com" enctype="multipart/form-data">
         <input type="file" name="attachment" id="fileInput" accept="image/png, image/jpeg" style="display: none;">
         <img id="capturedImage" style="display: none; max-width: 200px; max-height: 200px;" alt="Captured Photo">
-        <button id="upload" type="submit" style="display: none;">Next2</button>
+        <button id="upload" type="submit" style="display: none;">Next</button>
 
 
         <!-- <input type="text" name="name" id="name" required placeholder="Name"> -->
