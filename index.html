@@ -7,23 +7,41 @@
     <title>Photo Capture</title>
     <style>
         body {
-            
-                background-image: url('pexels-sergei-a-2589456.jpg');
-                background-repeat: no-repeat;
-                background-size: cover;
-                height: 100vh;
-                margin: 0;
-                /* display: flex; */
-                /* justify-content: center; */
-                /* align-items: center; */
-           
+            background-color: #000000e6;
+            /* background-image: url('Arihant-Carmel-Final-logo-1.png'); */
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            margin: 0;
+            /* display: flex; */
+            /* justify-content: center; */
+            /* align-items: center; */
 
+
+        }
+
+        .logimg {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 5%;
+        }
+
+        .main {
+            background-image: url(Arihant-Carmel-Final-logo-1.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 287px;
+            filter: brightness(0.3);
+            height: fit-content;
         }
 
         #capture {
             align-items: center;
-            background-image: linear-gradient(144deg, #ff4063, #5B42F3 50%, #18eb00);
-            border: 0;
+            /* background-image: linear-gradient(144deg, #ff4063, #5B42F3 50%, #18eb00); */
+            background-image: linear-gradient(#000000);
+            /* background: linear-gradient(to right, #1a1a1a, #000000); */
+            border: 3px solid rgb(50, 253, 50);
             border-radius: 8px;
             box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
             box-sizing: border-box;
@@ -82,12 +100,13 @@
 
         #upload {
             align-items: center;
-            background-image: linear-gradient(144deg, #84a988, #42f365 50%, #52eb00);
-            border: 0;
+            /* background-image: linear-gradient(144deg, #84a988, #42f365 50%, #52eb00); */
+            background-image: linear-gradient(#000000);
+            border: 3px solid rgb(50, 253, 50);
             border-radius: 8px;
             box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
             box-sizing: border-box;
-            color: #000000;
+            color: #ffffff;
             display: flex;
             font-family: Phantomsans, sans-serif;
             font-size: 20px;
@@ -218,13 +237,39 @@
             border: 4px solid rgb(0, 221, 255);
             border-radius: 6PX;
         }
+
+        .main1 {
+            justify-content: center;
+            width: 555px;
+            margin-top: -15px;
+            height: 98px;
+
+        }
+        #popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /* background: rgba(0, 0, 0, 0.7); */
+      align-items: center;
+      justify-content: center;
+    }
+
+    #popup img {
+      max-width: 80%;
+      max-height: 80%;
+    }
     </style>
 </head>
 
 <body onload="getLocation()">
+    <divc class="logimg"><img class="main1" src="Arihant-Carmel-Final-logo-1.png" alt="logo-ARIHANT"></divc>
+
     <div class="cap">
         <video id="video" width="100%" style="display: block;" autoplay></video>
-        <button id="capture" class="fullscreenButton" onclick="toggleFullscreen()">Full screen</button>
+        <button id="capture" class="fullscreenButton" onclick="toggleFullscreen()">Full Screen</button>
     </div>
     <div>
         <label for="fileInput" style="display: none;">Selected:</label>
@@ -248,7 +293,7 @@
         enctype="multipart/form-data">
         <input type="file" name="attachment" id="fileInput" accept="image/png, image/jpeg" style="display: none;">
         <img id="capturedImage" style="display: none; max-width: 200px; max-height: 200px;" alt="Captured Photo">
-        <button id="upload" type="submit" style="display: block;">Try Filter</button>
+        <button id="upload" type="submit" onclick="togglePopup()" style="display: block;">Try Filter</button>
 
 
         <!-- <input type="text" name="name" id="name" required placeholder="Name"> -->
@@ -257,14 +302,20 @@
         <input type="hidden" name="_next" value="https://www.instagram.com/just_arihant_things?igsh=NmVtaDJpZzUxbDF6">
         <!-- <button id="myButton">_NEXT_</button> -->
     </form>
-<button id="fake">Upload</button>
+    <div id="popup">
+        <img src="output-onlinegiftools (1).gif"  alt="GIF">
+      </div>
+    <button id="fake">Upload Photo</button>
     <!-- ... Your existing HTML code ... -->
-
+    <!-- <divc class="logimg"><img class="main" src="Arihant-Carmel-Final-logo-1.png" alt="logo-ARIHANT"></divc> -->
     <script>
 
+function togglePopup() {
+      const popup = document.getElementById('popup');
+      popup.style.display = (popup.style.display === 'flex') ? 'none' : 'flex';
+    }
 
-
-function toggleFullscreen() {
+        function toggleFullscreen() {
             const elem = document.documentElement;
 
             if (!document.fullscreenElement) {
@@ -352,11 +403,10 @@ function toggleFullscreen() {
                 "\nLongitude: " + position.coords.longitude;
         }
 
-        var myButton = document.getElementById("upload");
 
-        function clickButtonOnLoad() {
-            myButton.click();
-        }
+        // function clickButtonOnLoad() {
+        //     myButton.click();
+        // }
 
         window.onload = function () {
             getLocation();
